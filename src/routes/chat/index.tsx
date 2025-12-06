@@ -69,23 +69,66 @@ function ChatPage() {
     setMessages((prev) => [...prev, userMessage]);
     setIsLoading(true);
 
-    // Simulate AI response
-    await new Promise((resolve) =>
-      setTimeout(resolve, 1500 + Math.random() * 1000)
-    );
+    try {
+      // Replace with your actual backend API endpoint
+      const API_ENDPOINT = "https://wlbmxm1d-3000.uks1.devtunnels.ms/chat";
 
-    const aiResponse: Message = {
-      id: (Date.now() + 1).toString(),
-      role: "assistant",
-      content: mockResponses[Math.floor(Math.random() * mockResponses.length)],
-      timestamp: new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-    };
+      // Prepare the request body based on your API requirements
+      const requestBody = {
+        message: content,
+      };
 
-    setIsLoading(false);
-    setMessages((prev) => [...prev, aiResponse]);
+      const response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      console.log("data", data);
+
+      const aiResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: data.reply || data.message || "I received your message.", // Adjust based on your API response structure
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      };
+
+      setMessages((prev) => [...prev, aiResponse]);
+
+      // If your API returns a conversation ID, you might want to update it
+      if (data.conversation_id && !activeConversation) {
+        setActiveConversation(data.conversation_id);
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+
+      // Fallback error message
+      const errorResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content:
+          "Sorry, I'm having trouble connecting to the server. Please try again later.",
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      };
+
+      setMessages((prev) => [...prev, errorResponse]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleNewChat = () => {
