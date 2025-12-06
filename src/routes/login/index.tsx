@@ -164,9 +164,9 @@ function LoginPage() {
 
               {isLogin && (
                 <div className="flex justify-end">
-                  <Link to="#" className="text-sm text-primary hover:underline">
+                  <a href="#" className="text-sm text-primary hover:underline">
                     Forgot password?
-                  </Link>
+                  </a>
                 </div>
               )}
 

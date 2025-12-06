@@ -70,7 +70,7 @@ export function HeroSection() {
                 Login
               </Button>
             </Link>
-            <Link to="#features">
+            <a href="#features">
               <Button
                 size="lg"
                 variant="ghost"
@@ -78,7 +78,7 @@ export function HeroSection() {
               >
                 Learn More
               </Button>
-            </Link>
+            </a>
           </div>
         </motion.div>
 

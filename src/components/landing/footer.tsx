@@ -28,20 +28,20 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="#features"
+                <a
+                  href="#features"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   Features
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#languages"
+                <a
+                  href="#languages"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   Languages
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -58,28 +58,28 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   About
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   Blog
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   Careers
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -88,28 +88,28 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   Privacy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   Terms
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="#"
+                <a
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-foreground"
                 >
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

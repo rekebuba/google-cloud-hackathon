@@ -26,24 +26,24 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link
-              to="#features"
+            <a
+              href="#features"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Features
-            </Link>
-            <Link
-              to="#languages"
+            </a>
+            <a
+              href="#languages"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Languages
-            </Link>
-            <Link
-              to="#testimonials"
+            </a>
+            <a
+              href="#testimonials"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Testimonials
-            </Link>
+            </a>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
@@ -76,24 +76,24 @@ export function Navbar() {
             className="md:hidden bg-background border-b border-border"
           >
             <div className="px-4 py-4 space-y-3">
-              <Link
-                to="#features"
+              <a
+                href="#features"
                 className="block text-sm text-muted-foreground hover:text-foreground"
               >
                 Features
-              </Link>
-              <Link
-                to="#languages"
+              </a>
+              <a
+                href="#languages"
                 className="block text-sm text-muted-foreground hover:text-foreground"
               >
                 Languages
-              </Link>
-              <Link
-                to="#testimonials"
+              </a>
+              <a
+                href="#testimonials"
                 className="block text-sm text-muted-foreground hover:text-foreground"
               >
                 Testimonials
-              </Link>
+              </a>
               <div className="pt-3 flex flex-col gap-2">
                 <Link to="/login">
                   <Button
