@@ -71,7 +71,8 @@ function ChatPage() {
 
     try {
       // Replace with your actual backend API endpoint
-      const API_ENDPOINT = "https://wlbmxm1d-3000.uks1.devtunnels.ms/chat";
+      // const API_ENDPOINT = "https://wlbmxm1d-3000.uks1.devtunnels.ms/chat";
+      const API_ENDPOINT = "http://34.66.113.101:8080/chat";
 
       // Prepare the request body based on your API requirements
       const requestBody = {
